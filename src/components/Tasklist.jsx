@@ -94,9 +94,7 @@ const TaskList = () => {
 
                         <Divider sx={{ my: 2 }} />
 
-                        <Typography variant="h6" sx={{ marginBottom: 2 }}>
-                            Completed Tasks
-                        </Typography>
+
                         <List>
                             {completedTasks.map((task) => (
                                 <ListItem

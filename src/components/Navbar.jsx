@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Button, Box, TextField } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../redux/authSlice';

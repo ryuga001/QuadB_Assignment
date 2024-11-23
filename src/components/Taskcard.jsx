@@ -1,18 +1,17 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { toggleComplete, deleteTask } from '../redux/tasksSlice';
+import DeleteIcon from '@mui/icons-material/Delete';
 import {
+    Box,
     Card,
     CardContent,
-    Typography,
-    Chip,
-    IconButton,
-    Box,
-    Divider,
     Checkbox,
+    Chip,
+    Divider,
+    IconButton,
+    Typography,
 } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
-import WeatherTask from './Weather';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteTask, toggleComplete } from '../redux/tasksSlice';
 
 const TaskCard = ({ task }) => {
     const dispatch = useDispatch();
@@ -32,15 +31,15 @@ const TaskCard = ({ task }) => {
                 marginBottom: 1.5,
                 borderRadius: 1,
                 width: '100%',
-                minWidth: '280px', // Card expands based on content but has a minimum width
-                padding: 1.5, // Compact padding
+                minWidth: '280px',
+                padding: 1.5,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
             }}
         >
             <CardContent sx={{ padding: 1 }}>
-                {/* Task Title and Checkbox */}
+
                 <Box
                     sx={{
                         display: 'flex',
@@ -57,7 +56,7 @@ const TaskCard = ({ task }) => {
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             whiteSpace: 'nowrap',
-                            flexGrow: 1, // Allow title to expand and fit text
+                            flexGrow: 1,
                         }}
                     >
                         {task.title}
@@ -66,11 +65,11 @@ const TaskCard = ({ task }) => {
                         checked={task.completed}
                         onChange={handleCompleteToggle}
                         color="primary"
-                        size="small" // Smaller checkbox
+                        size="small"
                     />
                 </Box>
 
-                {/* Task Note */}
+
                 <Typography
                     variant="body2"
                     color="textSecondary"
@@ -85,7 +84,7 @@ const TaskCard = ({ task }) => {
                     {task.note}
                 </Typography>
 
-                {/* Due Date */}
+
                 <Typography
                     variant="body2"
                     color="textSecondary"
@@ -97,7 +96,7 @@ const TaskCard = ({ task }) => {
                     Due: {new Date(task.date).toLocaleDateString()}
                 </Typography>
 
-                {/* Priority Chip */}
+
                 <Chip
                     label={task.priority}
                     color={
@@ -107,7 +106,7 @@ const TaskCard = ({ task }) => {
                                 ? 'warning'
                                 : 'success'
                     }
-                    size="small" // Smaller chip
+                    size="small"
                     sx={{
                         marginBottom: 1,
                         fontSize: '0.75rem',
@@ -116,7 +115,7 @@ const TaskCard = ({ task }) => {
 
                 <Divider sx={{ marginBottom: 0.5 }} />
 
-                {/* Task Status */}
+
                 <Typography
                     variant="body2"
                     sx={{
@@ -128,12 +127,12 @@ const TaskCard = ({ task }) => {
                     {task.completed ? 'Completed' : 'Pending'}
                 </Typography>
 
-                {/* Delete Button */}
+
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <IconButton
                         color="error"
                         onClick={handleDeleteTask}
-                        size="small" // Smaller delete icon
+                        size="small"
                     >
                         <DeleteIcon fontSize="small" />
                     </IconButton>

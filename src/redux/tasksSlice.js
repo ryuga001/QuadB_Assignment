@@ -8,8 +8,8 @@ const tasksSlice = createSlice({
     initialState,
     reducers: {
         addTask: (state, action) => {
-            console.log("Current state tasks:", state.tasks); // Log current state tasks
-            console.log("Dispatch payload:", action.payload); // Log payload to check what's being dispatched
+            console.log("Current state tasks:", state.tasks);
+            console.log("Dispatch payload:", action.payload);
             state.tasks.push(action.payload);
         },
         toggleComplete: (state, action) => {

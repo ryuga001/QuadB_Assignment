@@ -20,17 +20,31 @@ const HomePage = () => {
     return (
 
         <>
+            <CssBaseline />
+            <Navbar />
+
+            <Box display="flex" width="100%" height="100vh" mt={2}>
+
+                <Box
+                    width="20%"
+
+                    p={2}
+                    display="flex"
+
+                >
+                    <Sidebar />
+                </Box>
 
 
-            <Box
-                width="80%"
-                p={2}
-                display="flex"
+                <Box
+                    width="80%"
+                    p={2}
+                    display="flex"
 
-            >
-                <TaskList />
+                >
+                    <TaskList />
+                </Box>
             </Box>
-
         </>
     );
 };
